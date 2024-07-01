@@ -14,7 +14,7 @@ inquirer
 
     {
       type: "input",
-      name: "textColour",
+      name: "textColor",
       message: "Enter a text color (keyword or hexadecimal):",
     },
 
@@ -27,21 +27,29 @@ inquirer
 
     {
       type: "input",
-      name: "shapeColour",
+      name: "shapeColor",
       message: "Enter a shape color (keyword or hexadecimal):",
     },
   ])
   .then((answers) => {
-    // Do something with the answers...
+    let shape;
+
+    switch (answers.shape) {
+      case "circle":
+        shape = new Circle();
+        break;
+
+      case "triangle":
+        shape = new Triangle();
+        break;
+
+      case "square":
+        shape = new Square();
+        break;
+    }
   })
   .catch((error) => {
     error.isTtyError
       ? console.error("Couldn't be rendered in the current environment")
       : console.error("Something else went wrong...", error);
   });
-
-function writeToFile(reponses) {
-  fs.writeFile("./output/responses.json", JSON.stringify(reponses), (err) => {
-    err ? console.error("err") : console.log("Generated responses.json");
-  });
-}
