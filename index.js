@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const fs = require("fs");
 
 inquirer
   .prompt([
@@ -28,10 +29,16 @@ inquirer
     },
   ])
   .then((answers) => {
-    console.log("ANSWERS:", answers);
+    writeToFile(answers);
   })
   .catch((error) => {
     error.isTtyError
       ? console.error("Couldn't be rendered in the current environment")
       : console.error("Something else went wrong...", error);
   });
+
+function writeToFile(reponses) {
+  fs.writeFile("./output/logo.svg", JSON.stringify(reponses), (err) => {
+    err ? console.error("err") : console.log("Generated logo.svg");
+  });
+}
