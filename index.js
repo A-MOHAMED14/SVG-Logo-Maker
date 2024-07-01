@@ -59,6 +59,10 @@ inquirer
   }>${answers.text}</text>
 
 </svg>`;
+
+    fs.writeFile("./output/logo.svg", svgContent, (err) => {
+      err ? console.error("err") : console.log("Generated logo.svg");
+    });
   })
   .catch((error) => {
     error.isTtyError
