@@ -6,13 +6,15 @@ inquirer
     {
       type: "input",
       name: "text",
-      message: "Enter upto 3 characters",
+      message: "Enter upto 3 characters:",
+      validate: (input) =>
+        input.length <= 3 || "Please enter no more than 3 characters.",
     },
 
     {
       type: "input",
       name: "textColour",
-      message: "Enter a text colour",
+      message: "Enter a text color (keyword or hexadecimal):",
     },
 
     {
@@ -25,11 +27,11 @@ inquirer
     {
       type: "input",
       name: "shapeColour",
-      message: "Enter a shape colour",
+      message: "Enter a shape color (keyword or hexadecimal):",
     },
   ])
   .then((answers) => {
-    writeToFile(answers);
+    // Do something with the answers...
   })
   .catch((error) => {
     error.isTtyError
@@ -38,7 +40,7 @@ inquirer
   });
 
 function writeToFile(reponses) {
-  fs.writeFile("./output/logo.svg", JSON.stringify(reponses), (err) => {
-    err ? console.error("err") : console.log("Generated logo.svg");
+  fs.writeFile("./output/responses.json", JSON.stringify(reponses), (err) => {
+    err ? console.error("err") : console.log("Generated responses.json");
   });
 }
