@@ -21,3 +21,14 @@ describe("Triangle", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("Square", () => {
+  test("Square render", () => {
+    const expected = `<rect x="50" y="50" width="200" height="200" fill="blue" />`;
+    const shape = new Square();
+    shape.setColor("blue");
+    const actual = shape.render();
+
+    expect(actual).toEqual(expected);
+  });
+});
