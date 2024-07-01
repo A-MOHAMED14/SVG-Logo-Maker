@@ -19,5 +19,8 @@
   "homepage": "https://github.com/A-MOHAMED14/SVG-Logo-Maker#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
