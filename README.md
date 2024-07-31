@@ -10,6 +10,7 @@ SVG Logo Maker is a command-line application that allows users to create custom 
 
 - [Installation 🚀](#installation)
 - [Usage 🏗️](#usage)
+- [Video Demonstration 📹](#video-demonstration)
 - [Tests ✅](#tests)
 - [Contributing 🤝](#contributing)
 - [License 📄](#license)
@@ -56,6 +57,14 @@ node index.js
 
 - The application will generate an SVG file named `logo.svg` in the project directory.
 - Open `logo.svg` in a browser to view the custom logo.
+
+## Video Demonstration 📹
+
+Below is a video walk through demonstrating the functionality of this project:
+
+<a href="https://drive.google.com/file/d/1xP3EabGws-BC8aGjYI5Ev2V4jeeK2wwu/view">
+  <img src="./assets/images/video-demo.png" alt="Watch the video" style="width:300px"/>
+</a>
 
 ## Contributing 🤝
 
